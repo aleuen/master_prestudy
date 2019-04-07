@@ -1,0 +1,21 @@
+{% extends "global/Page.html" %}
+{% load otree static %}
+
+{% block title %}
+    Fragebogen
+{% endblock %}
+
+{% block content %}
+
+    Dieses Experiment ist Teil meiner Masterarbeit im Bereich Wirtschaftspsychologie.
+    Um mein Forschungsdesign verbessern zu können, bin ich auf Feedback angewiesen.<br>
+    Vielen Dank für die Beantwortung untenstehender Fragen! <br><br>
+
+    {% formfields %}<br><br>
+
+
+
+    {% next_button %}
+{% endblock %}
+
+

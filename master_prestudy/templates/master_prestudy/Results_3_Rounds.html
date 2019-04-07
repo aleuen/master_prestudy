@@ -1,0 +1,17 @@
+{% extends "global/Page.html" %}
+{% load otree static %}
+
+{% block title %}
+    Ergebnis der Investitionsaufgaben
+{% endblock %}
+
+{% block content %}
+
+    Die Auszahlung über die drei Runden beträgt <b> {{ participant.payoff }} </b>.<br><br>
+
+
+
+    {% next_button %}
+{% endblock %}
+
+

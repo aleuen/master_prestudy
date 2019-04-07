@@ -1,0 +1,33 @@
+{% extends "global/Page.html" %}
+{% load otree static %}
+
+{% block title %}
+    Willkommen
+{% endblock %}
+
+{% block content %}
+    <div class="card bg-light instructions">
+        <p>
+            Willkommen zu unserer Studie zu Entscheidungsverhalten.
+        <p>
+            Das Experiment besteht aus 4 aufeinander folgenden Runden von Investitionsentscheidungen.
+            Sie werden pro Runde {{ Constants.endowment }} Punkte haben, die Sie in eine Lotterie investieren können.
+            Dieses Experiment dauert etwa <b>10 Minuten</b> und die Teilnahme ist freiwillig.
+            Für die Teilnahme an der Studie erhalten Sie als Kompensation <b>1/2 Unterschrift</b> und zusätzlich eine Spielauszahlung,
+            die von Ihren Entscheidungen im Experiment abhängt.  Sie können einen Punkteertrag zwischen 0 und 2'800 Punkten erreichen.
+            400 Punkte entsprechen CHF 1.00; es ist also eine zusätzliche Gewinnauszahlung zwischen <b>CHF 0.00</b> und <b>CHF 7.00</b> möglich.<br>
+        <p>
+            Sie haben jederzeit die Möglichkeit, die Studie ohne Angabe von Gründen abzubrechen.<br>
+            Die Studienteilnahme ist mit keinerlei physischen oder psychischen Risiken verbunden. Alle in der Studie gesammelten
+            Daten werden anonymisiert ausgewertet.
+
+        <p>
+
+            Bei Fragen zu der Studie können Sie sich an folgende Adresse wenden: adrian.leuenberger@stud.unibas.ch
+    </div>
+
+    {% formfields %}
+
+    {% next_button %}
+
+{% endblock %}

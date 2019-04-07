@@ -1,0 +1,26 @@
+{% extends "global/Page.html" %}
+{% load otree static %}
+
+{% block title %}
+    Instruktionen
+{% endblock %}
+
+{% block content %}
+    <div class="card bg-light instructions">
+    <p>
+    Die möglichen Resultate einer Lotterie werden nun anhand von zwei Beispielen erklärt.
+    <p>
+    <b>Beispiel 1:</b> <br>
+    Ihre Gewinnzahl für die aktuelle Runde lautet: <b>{{ player.success_number }}</b> <br>
+
+    Wenn Sie 50 Punkte in die Lotterie investieren und in dieser Runde eine <b>{{ player.success_number }}</b> gewürfelt wird, verdienen Sie <b>350 Punkte</b>.
+    <p>
+    <b>Beispiel 2:</b> <br>
+    Ihre Gewinnzahl für die aktuelle Runde lautet: <b>{{ player.success_number2 }}</b> <br>
+
+    Wenn Sie 50 Punkte in die Lotterie investieren und in dieser Runde eine <b>{{ player.fail_number }}</b> gewürfelt wird als Ihre Gewinnzahl, verlieren Sie die investierten <b>50 Punkte</b>.
+    </div>
+
+    {% next_button %}
+
+{% endblock %}

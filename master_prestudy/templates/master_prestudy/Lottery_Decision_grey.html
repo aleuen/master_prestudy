@@ -1,0 +1,33 @@
+{% extends "global/Page.html" %}
+{% load otree static %}
+
+{% block title %}
+    Runde {{ player.round_number }} (von {{ Constants.num_rounds }})
+{% endblock %}
+
+{% block content %}
+    Ihre Gewinnzahl für diese Runde ist <b>{{ player.success_number }}</b>.<br><br>
+
+    Sie haben <b>{{ Constants.endowment }} Punkte</b> um in die Lotterie zu investieren.<br><br>
+
+    <p>Wie viel möchten Sie in die Lotterie investieren?</p>
+
+    {% formfields %}<br><br>
+
+    {% next_button %}
+
+
+{% endblock %}
+
+{% block scripts %}
+
+    <html>
+    <head>
+        <style>
+            body {background-color:rgb(60, 60, 60);}
+             body {color: GhostWhite;}
+        </style>
+    </head>
+    </html>
+
+{% endblock %}

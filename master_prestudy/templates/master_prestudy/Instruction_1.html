@@ -1,0 +1,36 @@
+{% extends "global/Page.html" %}
+{% load otree static %}
+
+{% block title %}
+    Instruktionen
+{% endblock %}
+
+{% block content %}
+    <div class="card bg-light instructions">
+    Das folgende Experiment besteht aus vier aufeinander folgenden Runden von Investitionsentscheidungen.<br><br>
+
+    Pro Runde können Sie sich entscheiden, ob Sie {{ Constants.endowment }} Punkte in eine Lotterie investieren möchten.
+
+    <body>
+
+        <ul>
+            <li>Zunächst wird Ihnen eine Gewinnzahl zwischen 1 und 6 zugelost und auf dem Bildschirm angezeigt.</li>
+            <li>Dann können Sie sich entscheiden wie viele Punkte Sie in die Lotterie investieren wollen.</li>
+            <li>Nach der Investitionsentscheidung wird ein Würfel gewürfelt.
+                <ul>
+                    <li>Wenn die gewürfelte Zahl mit Ihrer Gewinnzahl übereinstimmt (1/6 Chance), war die
+                        Lotterie erfolgreich und Sie erhalten das Siebenfache Ihres Einsatzes.</li>
+                    <li>Wenn die gewürfelte Zahl nicht mit Ihrer Gewinnzahl übereinstimmt (5/6 Chance), war die
+                        Lotterie nicht erfolgreich und Sie verlieren die investierten Punkte.</li>
+                </ul>
+            </li>
+            <li>Das Ergebnis der Lotterie wird am Ende jeder Runde angezeigt.</li>
+            <li>Sie können sich auch dafür entscheiden, an der Lotterie nicht teilzunehmen.
+                In diesem Fall tragen Sie bei der Investition 0 Punkte ein.</li>
+        </ul>
+
+    </body>
+    </div>
+    {% next_button %}
+
+{% endblock %}

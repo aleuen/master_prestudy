@@ -1,0 +1,23 @@
+{% extends "global/Page.html" %}
+{% load otree static %}
+
+{% block title %}
+    Instruktionen
+{% endblock %}
+
+{% block content %}
+    <div class="card bg-light instructions">
+    <p>
+    <b>Zusammenfassung:</b> <br>
+        Sie treffen nun in vier aufeinander folgenden Runden Investitionsentscheidungen.<br>
+        Pro Runde können Sie sich entscheiden, wie viele der <b>{{ Constants.endowment }} Punkte</b> Sie in eine Lotterie investieren möchten.
+    <p>
+        Am Ende der vier Runden erhalten Sie als Spielauszahlung die Summe aller Gewinne abzüglich der Investierten Beträge ausbezahlt.<br>
+        Sie können einen Punkteertrag zwischen 0 und 2'800 Punkten erreichen. 400 Punkte entsprechen CHF 1.00; es ist also eine
+        Gewinnauszahlung zwischen <b>CHF 0.00</b> und <b>CHF 7.00</b> möglich.
+    </div>
+
+
+    {% next_button %}
+
+{% endblock %}

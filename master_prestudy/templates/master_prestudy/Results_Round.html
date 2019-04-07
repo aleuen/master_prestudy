@@ -1,0 +1,26 @@
+{% extends "global/Page.html" %}
+{% load otree static %}
+
+{% block title %}
+
+{% endblock %}
+
+{% block content %}
+    {%  if player.lottery == 0 %}
+    Sie haben sich entschieden, nicht in die Lotterie zu investieren.<br><br>
+
+    Der Einsatz von <b>{{ Constants.endowment }}</b> für diese Investition und die verbleibenden Runden wird ausgezahlt.<br><br>
+
+    {% else %}
+    Sie haben eine <b>{{ player.random_draw }}</b> gewürfelt.<br><br>
+
+    Ihre Gewinnzahl war <b>{{ player.success_number }}</b>.<br><br>
+
+    Die Investition war {% if player.success %} <b>erfolgreich</b> {% else %} <b>nicht erfolgreich</b> {%  endif %}.<br><br>
+        
+    {%  endif %}
+
+    {% next_button %}
+{% endblock %}
+
+

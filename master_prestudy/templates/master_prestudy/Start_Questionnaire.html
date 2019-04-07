@@ -1,0 +1,51 @@
+{% extends "global/Page.html" %}
+{% load otree static %}
+
+{% block title %}
+    {%  if player.consent == 0 %}
+    Danke für Ihr Interesse
+
+    {% else %}
+    Fragebogen
+    {%  endif %}
+{% endblock %}
+
+{% block content %}
+    {%  if player.consent == 0 %}
+    Sie haben sich entschieden, nicht an der Studie teilzunehmen.<br><br>
+
+        Sie können das Browserfenster nun schliessen.
+
+    {% else %}
+
+    <b>Bitte beantworten Sie folgende Fragen:</b> <br><br>
+
+    {% formfield player.sex %}
+
+    {% formfield player.age %}
+
+        Bitte geben Sie im untenstehenden Feld Ihren persönlichen Identitätscode ein, den Sie benötigen,
+        um die Auszahlung zu erhalten.
+        <div class="card bg-light instructions">
+        <p>
+            Der Code setzt sich wie folgt zusammen:
+        <body>
+        <ul>
+            <li>Die letzten zwei Buchstaben aus Ihrem Nachnamen (z.B. Müller = "ER")</li>
+            <li>Der Tag Ihres Geburtstages in zwei Ziffern (z.B. 03.09.1994 = "03"</li>
+            <li>Die ersten zwei Buchstaben des Vornamens Ihrer Mutter (z.B. Nicole = "NI")</li>
+        </ul>
+        </body>
+
+        Beispiel: Jan Müller, Geburtstag 03.04.1994, Name der Mutter: Nicole Müller = Identitätscode: "ER02NI"
+        </div>
+
+    {% formfield player.code %}<br>
+
+
+    {% next_button %}
+    {%  endif %}
+
+{% endblock %}
+
+

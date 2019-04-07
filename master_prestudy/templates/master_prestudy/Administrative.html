@@ -1,0 +1,22 @@
+{% extends "global/Page.html" %}
+{% load otree static %}
+
+{% block title %}
+    Herzlichen Dank für Ihre Teilnahme!
+{% endblock %}
+
+{% block content %}
+    Die Auszahlung der <b>1/2 Unterschrift</b> und des verdienten Betrages von <b>CHF {{ player.sum_lot_chf }}</b> ({{ player.sum_lot_p }}) können Sie
+    mit untenstehendem Code zu folgenden Zeitfenstern abholen:<br><br>
+
+    Donnerstag, XX. April 2019, 12.00 - 13.30 Uhr<br>
+    Dienstag, XX. April 2019, 14.00 - 15.30 Uhr <br><br>
+
+     
+    Ihr persönlicher Identitätscode: <b>{{ player.part_id }}</b><br><br>
+
+    Bei Fragen zu der Studie können Sie sich an folgende Adresse wenden: adrian.leuenberger@stud.unibas.ch<br>
+    Bitte notieren Sie sich den Code für die Auszahlung. Danach können Sie das Browserfenster schliessen.<br>
+
+
+{% endblock %}
