@@ -20,7 +20,7 @@ SESSION_CONFIGS = [
     #},
     {
         'name': 'master_prestudy',
-        'num_demo_participants': 1,
+        'num_demo_participants': 80,
         'app_sequence': ['master_prestudy'],
     },
 ]
