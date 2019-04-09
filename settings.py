@@ -34,7 +34,15 @@ LANGUAGE_CODE = 'de_CH'
 REAL_WORLD_CURRENCY_CODE = 'CHF'
 USE_POINTS = True
 
-ROOMS = []
+ROOM_DEFAULTS = {}
+
+ROOMS = [
+    {
+        'name': 'prestudy',
+        'display_name': 'master_prestudy',
+        'participant_label_file': '_rooms/econ101.txt',
+    }
+]
 
 ADMIN_USERNAME = 'admin'
 # for security, best to set admin password in an environment variable
