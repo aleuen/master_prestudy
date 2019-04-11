@@ -5,8 +5,7 @@ from otree.api import (
 from decimal import Decimal
 import random
 import itertools
-from django_user_agents.utils import get_user_agent
-from user_agents import parse
+
 
 
 

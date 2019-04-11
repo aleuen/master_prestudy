@@ -3,7 +3,6 @@ from ._builtin import Page, WaitPage
 from .models import Constants
 import random
 from decimal import Decimal
-from django_user_agents.utils import get_user_agent
 
 
 class Info_Consent(Page):
