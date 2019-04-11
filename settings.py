@@ -20,7 +20,7 @@ SESSION_CONFIGS = [
     #},
     {
         'name': 'master_prestudy',
-        'num_demo_participants': 80,
+        'num_demo_participants': 20,
         'app_sequence': ['master_prestudy'],
     },
 ]
@@ -53,4 +53,8 @@ DEMO_PAGE_INTRO_HTML = """ """
 SECRET_KEY = '#!=0$7h!%=$%g*6@k50azm@$&(jmf(k6cj)p4*f+y95+ioybg6'
 
 # if an app is included in SESSION_CONFIGS, you don't need to list it here
-INSTALLED_APPS = ['otree']
+INSTALLED_APPS = ['otree', 'otree_tools']
+EXTENSION_APPS = ['otree_tools']
+
+
+

@@ -13,12 +13,12 @@
     <b>Beispiel 1:</b> <br>
     Ihre Gewinnzahl für die aktuelle Runde lautet: <b>{{ player.success_number }}</b> <br>
 
-    Wenn Sie 50 Punkte in die Lotterie investieren und in dieser Runde eine <b>{{ player.success_number }}</b> gewürfelt wird, verdienen Sie <b>350 Punkte</b>.
+    Wenn Sie 50 Punkte in die Lotterie investieren und in dieser Runde eine <b>{{ player.success_number }}</b> gewürfelt wird, erhalten Sie <b>400 Punkte</b> (7 * 50 Punkte = 350 Punkte + 50 Punkte, die nicht investiert wurden).
     <p>
     <b>Beispiel 2:</b> <br>
     Ihre Gewinnzahl für die aktuelle Runde lautet: <b>{{ player.success_number2 }}</b> <br>
 
-    Wenn Sie 50 Punkte in die Lotterie investieren und in dieser Runde eine <b>{{ player.fail_number }}</b> gewürfelt wird als Ihre Gewinnzahl, verlieren Sie die investierten <b>50 Punkte</b>.
+    Wenn Sie 50 Punkte in die Lotterie investieren und in dieser Runde eine <b>{{ player.fail_number }}</b> gewürfelt wird, verlieren Sie die investierten <b>50 Punkte</b>. Die 50 Punkte, die nicht investiert wurden, behalten Sie.
     </div>
 
     {% next_button %}

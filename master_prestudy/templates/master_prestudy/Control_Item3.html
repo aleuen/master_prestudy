@@ -1,0 +1,23 @@
+{% extends "global/Page.html" %}
+{% load otree static otree_tools %}
+
+{% block tracker %}
+    {% tracking_time %}
+    {% tracking_focus %}
+{% endblock %}
+
+{% block title %}
+    Instruktionen
+{% endblock %}
+
+{% block content %}
+    <b>Verständnisfrage 2:</b> <br>
+    Stellen Sie sich folgende Situation vor:
+
+
+    {% formfield player.control_3 %}
+
+
+    {% next_button %}
+
+{% endblock %}

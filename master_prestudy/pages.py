@@ -3,13 +3,20 @@ from ._builtin import Page, WaitPage
 from .models import Constants
 import random
 from decimal import Decimal
+from django_user_agents.utils import get_user_agent
+
 
 class Info_Consent(Page):
     form_model = 'player'
     form_fields = ['consent']
+
     def is_displayed(self):
         return self.round_number == 1
-    pass
+
+    def before_next_page(self):
+        self.player.UserAgent = self.request.META.get('HTTP_USER_AGENT')
+
+
 
 class Start_Questionnaire(Page):
     form_model = 'player'
@@ -39,6 +46,14 @@ class Instruction_2(Page):
         self.player.fail_number = random.randint(1,6)
         if self.player.success_number2 == self.player.fail_number:
             self.player.fail_number = random.randint(1, 6)
+            if self.player.success_number2 == self.player.fail_number:
+                self.player.fail_number = random.randint(1,6)
+                if self.player.success_number2 == self.player.fail_number:
+                    self.player.fail_number = random.randint(1, 6)
+                    if self.player.success_number2 == self.player.fail_number:
+                        self.player.fail_number = random.randint(1, 6)
+                        if self.player.success_number2 == self.player.fail_number:
+                            self.player.fail_number = random.randint(1, 6)
 pass
 
 class Control_Item1(Page):
@@ -60,6 +75,30 @@ class Control_Item2(Page):
         return self.round_number == 1
 
     def control_2_error_message(self, value):
+        print('value is', value)
+        if value == 0:
+            return 'Ihre Antwort ist nicht korrekt. Bitte versuchen Sie es erneut.'
+    pass
+
+class Control_Item3(Page):
+    form_model = 'player'
+    form_fields = ['control_3']
+    def is_displayed(self):
+        return self.round_number == 1
+
+    def control_3_error_message(self, value):
+        print('value is', value)
+        if value == 0:
+            return 'Ihre Antwort ist nicht korrekt. Bitte versuchen Sie es erneut.'
+    pass
+
+class Control_Item4(Page):
+    form_model = 'player'
+    form_fields = ['control_4']
+    def is_displayed(self):
+        return self.round_number == 1
+
+    def control_4_error_message(self, value):
         print('value is', value)
         if value == 0:
             return 'Ihre Antwort ist nicht korrekt. Bitte versuchen Sie es erneut.'
@@ -127,7 +166,7 @@ class Lottery_Decision_grey(Page):
 
 class Rolling_dice(Page):
     form_model = 'player'
-    timeout_seconds = 1
+    timeout_seconds = .5
     pass
 
 class Results_Round(Page):
@@ -184,6 +223,13 @@ class Results_Final(Page):
 
     pass
 
+class Kontrollfrage(Page):
+    form_model = 'player'
+    form_fields = ['Kontrollfrage']
+    def is_displayed(self):
+        return self.round_number == Constants.num_rounds
+    pass
+
 class Intro_SOEP(Page):
     form_model = 'player'
     def is_displayed(self):
@@ -226,7 +272,7 @@ page_sequence = [Info_Consent,
                  Instruction_1,
                  Instruction_2,
                  Control_Item1,
-                 Control_Item2,
+                 Control_Item3,
                  Instruction_3,
                  Lottery_Decision,
                  Lottery_Decision_grey,
@@ -234,6 +280,7 @@ page_sequence = [Info_Consent,
                  Results_Round,
                  Results_3_Rounds,
                  Results_Final,
+                 Kontrollfrage,
                  Intro_SOEP,
                  SOEP_gen,
                  SOEP_fin,

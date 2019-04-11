@@ -1,5 +1,10 @@
 {% extends "global/Page.html" %}
-{% load otree static %}
+{% load otree static otree_tools %}
+
+{% block tracker %}
+    {% tracking_time %}
+    {% tracking_focus %}
+{% endblock %}
 
 {% block title %}
     Instruktionen

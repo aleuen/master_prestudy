@@ -5,6 +5,9 @@ from otree.api import (
 from decimal import Decimal
 import random
 import itertools
+from django_user_agents.utils import get_user_agent
+from user_agents import parse
+
 
 
 
@@ -19,7 +22,7 @@ https://static1.squarespace.com/static/57967bc7cd0f68048126361d/t/57ba6b82893fc0
 
 
 class Constants(BaseConstants):
-    name_in_url = 'lottery_imas'
+    name_in_url = 'master_prestudy'
     players_per_group = None
     num_rounds = 4 # How many lotteries?
     endowment = 100  # How many points are given during each lottery?
@@ -40,6 +43,15 @@ class Group(BaseGroup):
 
 class Player(BasePlayer):
     background = models.StringField()
+    UserAgent = models.StringField()
+    device = models.StringField()
+    # browser = models.StringField()
+    # user_agent = models.StringField
+    #
+    # def my_view(request):
+    #     device = self.request.user_agent.device.family
+    #     self.player.browser = self.request.user_agent.browser.family
+    #     pass
 
     consent = models.IntegerField(
         label='Einwilligungserklärung:',
@@ -136,6 +148,41 @@ class Player(BasePlayer):
         ],
         widget=widgets.RadioSelect
         )
+
+    control_3 = models.IntegerField(
+        label="Sie haben 80 Punkte investiert. Ihre Gewinnzahl ist 5 und es wurde eine 2 gewürfelt. "
+              "Wieviele Punkte erhalten Sie für diese Periode?",
+        choices=[
+            [0, '0 Punkte'],
+            [1, '20 Punkte'],
+            [0, '80 Punkte'],
+            [0, '140 Punkte']
+        ],
+        widget=widgets.RadioSelect
+        )
+
+    control_4 = models.IntegerField(
+        label="Sie haben 50 Punkte investiert. Ihre Gewinnzahl ist 2 und es wurde eine 2 gewürfelt. " \
+              "Wieviele Punkte erhalten für diese Periode?",
+        choices=[
+            [0, '50 Punkte'],
+            [0, '350 Punkte'],
+            [1, '400 Punkte'],
+            [0, '450 Punkte']
+        ],
+        widget=widgets.RadioSelect
+        )
+
+    # Kontrollfrage
+    Kontrollfrage = models.IntegerField(
+        label="Welche Farbe hatte der Hintergrund in der vierten Investitionsrunde?",
+        choices=[
+            [1, 'weiss'],
+            [2, 'grau'],
+            [3, 'weiss nicht']
+        ],
+        widget=widgets.RadioSelect
+    )
 
     # SOEP5-Fragen (generell und finanzdomäne)
     SOEP_gen = models.IntegerField(

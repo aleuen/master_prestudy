@@ -1,0 +1,18 @@
+{% extends "global/Page.html" %}
+{% load otree static %}
+
+{% block title %}
+    Instruktionen
+{% endblock %}
+
+{% block content %}
+    <b>Verständnisfrage 4:</b> <br>
+    Stellen Sie sich folgende Situation vor:
+
+
+    {% formfield player.control_4 %}
+
+
+    {% next_button %}
+
+{% endblock %}
