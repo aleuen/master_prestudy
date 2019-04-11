@@ -1,1 +1,2 @@
 otree>=2.1.39
+otree-tools>=1.1.15
