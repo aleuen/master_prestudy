@@ -1,0 +1,55 @@
+{% extends "global/Page.html" %}
+{% load otree static %}
+
+{% block title %}
+    {%  if player.consent == 0 %}
+        Thank you for your interest
+    {% else %}
+        Instructions
+    {%  endif %}
+{% endblock %}
+
+{% block content %}
+    {%  if player.consent == 0 %}
+    You have decided not to participate in the study.<br><br>
+
+    You can now close the browser window.
+    {% else %}
+
+    <div class="card bg-light instructions">
+        Welcome to our experimental study of decision-making. The experiment will last about 5 to 10 minutes.
+        All the money you earn is yours to keep. You will be compensated $ {{ Constants.compensation }} for the successful completion of this
+        experiment, and will additionally receive a game payment which will depend on your choices in the experiment.
+        <p>
+            The experiment consists of 4 successive rounds of investment decisions. You will have
+            {{ Constants.endowment_tot }} points total to invest with as you see fit. {{ Constants.endowment_tot }}
+            points are equivalent of $ 1. In each round you must decide whether you would like to invest up to
+            {{ Constants.endowment }} points ($ 0.25) of this amount in the following lottery:
+            <p>
+            With a chance of 1/6 (16%) the lottery will “succeed” and you will make 7 times the amount you invested.
+            With a chance of 5/6 (84%) the lottery will “fail” and you will lose the money you invested. The procedure
+            in each round is the same.
+            <p>
+            First, you are assigned one success number between 1 and 6. It is displayed on the computer screen. Second,
+            you enter the amount of points you would like to invest in the lottery. The amount can be up to {{ Constants.endowment }}
+            points in each round. You will indicate the amount you would like to invest by moving a sliding pointer.
+            You can invest an amount up to $0.25 in each round. The $0.25 per round is separate from the $0.30 completion payment.
+            <p>
+            Whether the lottery succeeds or fails will be determined as follows. First, in each round you will be
+            assigned one “success number” between 1 and 6. It is displayed on the computer screen. Second, you enter
+            the amount of points you would like to invest in the lottery. The amount can be up to {{ Constants.endowment }}
+            points in each round. After you indicate the amount you would like to invest in the lottery, you will be
+            taken to a page where a six-sided die is rolled. If the outcome is your “success number” (1/6 chance) then
+            the lottery will succeed and you will make seven times the amount you invested.  If the outcome is any other
+            number (5/6 chance) then you will lose the amount you invested. Afterwards, you get a new success number
+            and make the same decision in the next round.
+            <p>
+            At the end of the four rounds, your game payment will be the {{ Constants.endowment_tot }} ($ 1) you
+            started with, plus your net earnings from investments. Note that net earnings from investments could be
+            positive or negative. Your game payment will be delivered as a bonus.
+    </div>
+    {% next_button %}
+    {%  endif %}
+
+
+{% endblock %}

@@ -1,0 +1,26 @@
+{% extends "global/Page.html" %}
+{% load otree static %}
+
+{% block title %}
+
+{% endblock %}
+
+{% block content %}
+    {%  if player.lottery == 0 %}
+    Sie haben sich entschieden, nicht in die Lotterie zu investieren.<br><br>
+
+    Der Einsatz von <b>{{ Constants.endowment }}</b> für diese Investition und die verbleibenden Runden wird ausgezahlt.<br><br>
+
+    {% else %}
+    You rolled a <b>{{ player.random_draw }}</b>.<br><br>
+
+    You invested: <b>{{ player.investment }} points</b>.<br><br>
+
+    Investment outcome: {% if player.success %} <b>success</b> {% else %} <b>failure</b> {%  endif %}.<br><br>
+        
+    {%  endif %}
+
+    {% next_button %}
+{% endblock %}
+
+

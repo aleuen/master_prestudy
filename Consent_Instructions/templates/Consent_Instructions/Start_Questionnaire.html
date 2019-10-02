@@ -1,0 +1,34 @@
+{% extends "global/Page.html" %}
+{% load otree static %}
+
+{% block title %}
+    {%  if player.consent == 0 %}
+    Thank you for your interest!
+    {% else %}
+    Start Questionnaire
+    {%  endif %}
+{% endblock %}
+
+{% block content %}
+    {%  if player.consent == 0 %}
+    You have decided not to participate in the study.<br><br>
+
+        You can now close the browser window.
+
+    {% else %}
+
+    <b>Please answer the following questions:</b> <br><br>
+
+    {% formfield player.sex %}
+
+    {% formfield player.age %}
+
+<br>
+
+
+    {% next_button %}
+    {%  endif %}
+
+{% endblock %}
+
+

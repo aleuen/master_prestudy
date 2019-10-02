@@ -1,0 +1,26 @@
+{% extends "global/Page.html" %}
+{% load otree %}
+
+{% block title %}
+Exit Questionnaire
+{% endblock %}
+
+{% block content %}
+    <div class="card bg-light instructions">
+    <p>
+        In this part of the experiment we have some questions about your willingness to take risks. This is followed by
+        a short exit questionnaire and the payout of your earnings and compensation for time.
+    </p>
+    <p>
+        Please answer the following questions the following scale: <br>
+        A value of <b>0</b> means: <b>Risk averse</b> <br>
+        The value <b>10</b> means: <b>Fully prepared to take risk</b>
+    </p>
+    <p>
+        With the values in between, you can gradate your assessment.
+    </p>
+
+    </div>
+    {% next_button %}
+
+{% endblock %}

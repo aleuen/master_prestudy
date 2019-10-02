@@ -1,0 +1,49 @@
+{% extends "global/Page.html" %}
+{% load otree static %}
+
+{% block title %}
+    {%  if player.consent == 0 %}
+    Thank you for your interest!
+    {% else %}
+    Start Questionnaire
+    {%  endif %}
+{% endblock %}
+
+{% block content %}
+    {%  if player.consent == 0 %}
+    You have decided not to participate in the study.<br><br>
+
+        You can now close the browser window.
+
+    {% else %}
+    <div class="card bg-light instructions">
+    Please answer the following questions:
+    </div>
+
+    {% formfield player.sex %}
+
+    {% formfield player.age %}
+
+    Please enter your personal identity code in the box below. You will need this code to get the 1/2 signature and the bonus payment.
+        <div class = "card bg-light instructions">
+            <p>The code is composed as follows:</p>
+<ul>
+    <li>The last two letters of your last name (for example, Schmid = "ID")</li>
+    <li>The first two letters of your fathers's first name (for example, Rudolf = "RU")</li>
+    <li>The day of your birthday in two digits (for example 06.07.1993 = "06")</li>
+</ul>
+
+        Example: Jan Schmid, birthday 06.07.1993, name of the father: Rudolf Schmid = identity code: "IDRU06"
+        </div>
+    {% formfield player.code %}<br>
+
+
+<br>
+
+
+    {% next_button %}
+    {%  endif %}
+
+{% endblock %}
+
+

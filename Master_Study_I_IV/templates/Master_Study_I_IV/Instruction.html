@@ -1,0 +1,60 @@
+{% extends "global/Page.html" %}
+{% load otree static %}
+
+{% block title %}
+        Instructions
+{% endblock %}
+
+{% block content %}
+    <div class="card bg-light instructions">
+        <p>
+        Welcome to our experimental study of decision-making. The experiment will last about 5 to 10 minutes.
+        All the money you earn is yours to keep. You will be compensated with 1/2 signature for the successful completion of this
+        experiment, and will additionally receive a game payment which will depend on your choices in the experiment. At
+        the beginning, you receive a game payment of {% if player.endowment == 100 %}400{% else %}100{%  endif %} points.
+        <p>
+        The experiment consists of {% if player.treatment == 'paper' %}4{% else %}3{%  endif %} successive rounds of investment decisions. You will have
+        {{ player.endowment_tot }} total to invest with as you see fit. In each round you must decide whether you would like to invest up to
+        {{ player.endowment }} of this amount in the following lottery:
+        <p>
+        With a chance of 1/6 (16%) the lottery will “succeed” and you will make 7 times the amount you invested.
+        With a chance of 5/6 (84%) the lottery will “fail” and you will lose the money you invested.
+        <p>
+        You will enter the amount of points you would like to invest. You can invest an amount up to
+        {{ player.endowment }} in each round. The {{ player.endowment }} per round are separate from
+        the 1/2 signature completion payment.
+        <p>
+        Whether the lottery succeeds or fails will be determined as follows. In each round you will be
+        assigned one “success number” between 1 and 6. It is displayed on the computer screen. After you indicate
+        the amount of points you would like to invest in the lottery, you will be taken to a page where a six-sided
+        die is rolled. If the outcome is your “success number” (1/6 chance) then the lottery will succeed and you
+        will make seven times the amount X you invested. If the outcome is any other number (5/6 chance) then you
+        will lose the amount you invested.
+        <p>
+        Your earnings from the lottery will be reported each round. You will then be assigned new success numbers
+        and make the same decision for the next round.
+        <p>
+        {% if player.treatment == 'paper' %}
+            At the end of the four rounds, your game payment will be the {% if player.endowment == 100%}400
+            {% else %}100{%  endif %} points you started with, plus your net earnings from investments.
+            Note that net earnings from investments could be positive or negative. Your game payment will be
+            delivered as a bonus.
+            <p>
+            At the end of the study, you will receive the payout of the game payment. You can reach a total of
+                between 0 and 2,800 points. 400 points equals CHF 1; It is therefore a game payment between CHF 1 and
+                CHF 7 possible.
+            {% else %}
+            At the end of the three rounds, your game payment will be the {% if player.endowment == 100%}400
+            {% else %}100{%  endif %} points you started with, plus your net earnings from investments.
+            Note that net earnings from investments could be positive or negative. After the three rounds, you begin
+            with the next part of the experiment. In the next part, you make one more decision.
+            <p>
+            At the end of the study, you will receive the payout of the game payment. You can reach a total of
+                between 0 and 700 points. 100 points equals CHF 1. It is therefore a game payment between CHF 1 and
+                CHF 7 possible.
+            {%  endif %}
+
+    </div>
+    {% next_button %}
+
+{% endblock %}

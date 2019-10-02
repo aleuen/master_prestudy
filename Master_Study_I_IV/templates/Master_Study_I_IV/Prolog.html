@@ -1,0 +1,27 @@
+{% extends "global/Page.html" %}
+{% load otree static %}
+
+{% block title %}
+    {%  if player.consent == 0 %}
+        Thank you for your interest
+    {% else %}
+        Instructions
+    {%  endif %}
+{% endblock %}
+
+{% block content %}
+    {%  if player.consent == 0 %}
+    You have decided not to participate in the study.<br><br>
+
+    You can now close the browser window.
+    {% else %}
+        <div class="card bg-light instructions">
+        Thank you for your willingness to participate in this study. On the next page you will see the instructions for the
+        experiment. Please read them carefully, it will not be possible to return to the instructions page later.
+    </div>
+
+    {% next_button %}
+    {%  endif %}
+
+
+{% endblock %}

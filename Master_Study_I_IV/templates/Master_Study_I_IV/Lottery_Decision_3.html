@@ -1,0 +1,25 @@
+{% extends "global/Page.html" %}
+{% load otree static %}
+
+
+{% block title %}
+    {% if player.treatment == 'paper' %}
+        Round 3 (out of 4)
+    {% else %}
+        Round 3 (out of 3)
+    {%  endif %}
+{% endblock %}
+
+{% block content %}
+    The "success number" for this round is <b>{{ player.success_number }}</b>.<br><br>
+
+    You have <b>{{ player.endowment }}</b> to invest in the lottery.<br><br>
+
+    <b>I would like to invest:</b>
+
+    {% formfields %} <br>
+
+    {% next_button %}
+
+
+{% endblock %}

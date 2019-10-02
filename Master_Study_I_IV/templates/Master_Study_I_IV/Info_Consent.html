@@ -1,0 +1,39 @@
+{% extends "global/Page.html" %}
+{% load otree static %}
+
+{% block title %}
+    Welcome
+{% endblock %}
+
+{% block content %}
+    <div class="card bg-light instructions">
+        <p>
+            Thank you for your interest in taking part in this study.
+        <p>
+            In this study we seek to investigate individual’s investment behavior. Therefore, your task will
+            be to play an investment task. In addition, you will fill out questionnaire, which assesses some
+            individual characteristics (e.g. risk taking behavior). There are no physical or legal risks involved
+            in the study.
+        <p>
+            The study will take about 5 to 10 minutes. For the successful completion of the experiment you will receive
+{#                <b>$ 0.50</b>#}
+                <b>1/2 signature</b>.
+            Based on your choice performance you will get a variable bonus payment after completion of the study,
+            between <b>CHF 1</b> and <b>CHF 7</b>. The study is conducted by the chair for Economic Psychology, University of
+            Basel, Switzerland. If you have questions about the study, you can contact Adrian Leuenberger,
+            by e-mail: <a href="mailto:adrian.leuenberger@stud.unibas.ch">adrian.leuenberger@stud.unibas.ch</a>
+        <p>
+            We grant the compliance of the privacy regulations through the Faculty for Psychology of the University of
+            Basel. Your data is collected online, stored anonymously and used for scientific means by experts only.
+            The results of the study are pooled anonymously and published scientifically without reference to your person.
+            The anonymous data will also be stored on the <a href="https://osf.io">Open Science Framework (OSF)</a> to
+            be made available to other researchers to verify the research results.
+        <p>
+            Participation in the study is voluntary and you have the possibility to stop your participation at any time.
+            Due to anonymization, you cannot retract your agreement for the usage of your data after finishing the study.</div>
+
+    {% formfields %}
+
+    {% next_button %}
+
+{% endblock %}

@@ -1,0 +1,36 @@
+{% extends "global/Page.html" %}
+{% load otree %}
+
+{% block title %}
+Exit Questionnaire
+{% endblock %}
+
+{% block content %}
+    <div class="card bg-light instructions">
+     How do you see yourself:
+    </div>
+    Are you generally a person who is fully prepared to take risks or do you try to avoid taking risks?
+    <p>
+    <center>{% formfields %}
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;0 = Risk averse &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 10 = Fully prepared to take risks
+    </center>
+    </p>
+
+    {% next_button %}
+
+{% endblock %}
+
+{% block scripts %}
+
+    <script>
+            setTimeout(
+        function()
+    {
+        alert("Time limit reached. Please decide faster.");
+    },
+    30 * 1000
+    );
+    </script>
+
+{% endblock %}
+

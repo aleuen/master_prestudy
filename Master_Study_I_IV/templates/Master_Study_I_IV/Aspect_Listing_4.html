@@ -1,0 +1,50 @@
+{% extends "global/Page.html" %}
+{% load otree static %}
+
+{% block title %}
+{#    {% if player.treatment == 'paper' %}#}
+{#        Round 4 (out of 4)#}
+{#    {% else %}#}
+{#        Round 1#}
+{#    {%  endif %}#}
+{% endblock %}
+
+{% block content %}
+    <div class="card bg-light instructions">
+    <p>
+        <b>Before the result of the last round and your overall results are shown, please answer the following question:</b>
+    </p>
+
+    <p><center>
+        <font size="4">Why did you decide to invest {{ player.investment_4 }} in the last lottery round?</font>
+    </center></p>
+
+    <p>
+        Please take a moment and think of all reasons that cross your mind while coming up with your answer to this
+        question. Then, please enter these reasons one at a time in the fields below. Try to describe each reason with
+        a full sentence such that another person can easily understand it.
+    </p>
+
+
+    </div>
+
+    <b>Reason # 4</b><br>
+    Please list your first reason that crosses your mind when coming up with your answer to this question. <br>
+    We would like you to list all reasons that you might have. Please keep going until you cannot think of any more. <br>
+    Type your first complete reason in the box below.<br><br>
+
+    {% formfield player.reason_4 %}
+
+    <button name="last_reason" value="False" class="btn btn-primary btn-large">
+        Submit reason
+    </button>
+
+    <br><br>
+
+    <div>
+    <button name="last_reason" value="True" class="btn btn-default btn-sm">I don't have any more reasons.</button>
+    </div>
+
+{% endblock %}
+
+

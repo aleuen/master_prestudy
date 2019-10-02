@@ -1,0 +1,27 @@
+{% extends "global/Page.html" %}
+{% load otree static %}
+
+{% block title %}
+{% endblock %}
+
+{% block content %}
+
+    Your total earnings for the three rounds are <b> {{ player.sum_lot_t3 }}</b>.<br><br>
+
+    <div class="card bg-light instructions">
+        Please type "closed" in the field below to realize your earnings with these effects:<br>
+        <body>
+        <ul>
+            <li>Any points lost up to this round will be then withdrawn from your account and transferred to the experimenter.</li>
+            <li>Any points you won will be credited to your account.</li>
+        </ul>
+        </body>
+    </div>
+
+    {% formfields %}
+
+
+    {% next_button %}
+{% endblock %}
+
+

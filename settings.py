@@ -7,7 +7,7 @@ from os import environ
 
 SESSION_CONFIG_DEFAULTS = {
     'real_world_currency_per_point': 1.00,
-    'participation_fee': 0.00,
+    'participation_fee': 0.50,
     'doc': "",
 }
 
@@ -23,15 +23,45 @@ SESSION_CONFIGS = [
         'num_demo_participants': 20,
         'app_sequence': ['master_prestudy'],
     },
+
+    {
+        'name': 'master_study',
+        'num_demo_participants': 5,
+        'app_sequence': ['Consent_Instructions', 'SOEP5'],
+    },
+
+    {
+        'name': 'Consent_Instructions',
+        'num_demo_participants': 5,
+        'app_sequence': ['Consent_Instructions'],
+    },
+
+    {
+        'name': 'SOEP5',
+        'num_demo_participants': 5,
+        'app_sequence': ['SOEP5'],
+    },
+
+    {
+        'name': 'Master_Study_I_IV',
+        'num_demo_participants': 16,
+        'app_sequence': ['Master_Study_I_IV', 'SOEP5', 'Exit_Questionnaire'],
+    },
+
+    {
+        'name': 'Exit_Questionnaire',
+        'num_demo_participants': 16,
+        'app_sequence': ['Exit_Questionnaire'],
+    }
 ]
 
 
 # ISO-639 code
 # for example: de, fr, ja, ko, zh-hans
-LANGUAGE_CODE = 'de_CH'
+LANGUAGE_CODE = 'en'
 
 # e.g. EUR, GBP, CNY, JPY
-REAL_WORLD_CURRENCY_CODE = 'CHF'
+REAL_WORLD_CURRENCY_CODE = '$'
 USE_POINTS = True
 
 ROOM_DEFAULTS = {}

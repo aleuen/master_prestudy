@@ -83,7 +83,6 @@ class Player(BasePlayer):
 
     success = models.BooleanField()
     random_draw = models.IntegerField()
-    exit = models.IntegerField(initial=0)
 
     # results / payoffs
     investment_1 = models.IntegerField(initial=None)

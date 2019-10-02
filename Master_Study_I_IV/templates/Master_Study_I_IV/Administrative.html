@@ -1,0 +1,23 @@
+{% extends "global/Page.html" %}
+{% load otree static %}
+
+{% block title %}
+Thank you very much for your participation!
+{% endblock %}
+
+{% block content %}
+    The payment of the <b>1/2 Unterschrift</b> and the earned bonus of <b>CHF {{ player.sum_lot_chf }}</b> can be collected with the code below at the following time slots:<br><br>
+
+Thursday, October 10, 2019, 15:45 - 16:00<br>
+Wednesday, October 16, 2019, 13:45 am - 14:00<br>
+Wednesday, October 23, 2019, 13:45 am - 14:00<br><br>
+
+     <b>Location:</b> Faculty of Psychology, Entrance Area (on the left side of the tables)<br><br>
+    
+     Your personal identity code: <b>{{player.code}}</b><br><br>
+
+     For questions about the study, please contact: <a href="mailto:adrian.leuenberger@stud.unibas.ch"> adrian.leuenberger@stud.unibas.ch</a><br>
+     Please make a note of the code for the payment. Then you can close the browser window. <br>
+
+
+{% endblock %}

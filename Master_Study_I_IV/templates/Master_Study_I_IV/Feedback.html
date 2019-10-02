@@ -1,0 +1,108 @@
+{% extends "global/Page.html" %}
+{% load otree %}
+
+{% block title %}
+Instructions
+{% endblock %}
+
+{% block content %}
+    <div class="card bg-light instructions">
+        Here are your results of the comprehension questions:
+    </div>
+
+    1. How many points can you use for each round?
+    {%  if player.control_1 == 0 %}
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+        <body class="w3-container">
+        <div class="w3-panel w3-pale-red w3-border">
+            <p>Your answer was wrong.</p>
+            <p>You can use <b>{{ player.endowment }}</b> in each round.</p>
+        </div>
+        </body>
+
+    {% else %}
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+        <body class="w3-container w3-auto">
+        <div class="w3-panel w3-pale-green w3-border">
+            <p>Correct!</p>
+            <p>You can use <b>{{ player.endowment }}</b> in each round.</p>
+        </div>
+        </body>
+    {%  endif %}
+
+    2. How many points do you have in total (over all rounds)?
+    {%  if player.control_2 == 0 %}
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+        <body class="w3-container">
+        <div class="w3-panel w3-pale-red w3-border">
+            <p>Your answer was wrong.</p>
+            <p>You can use <b>{% if player.endowment == 100 %}400{% else %}100{%  endif %} points</b> over all rounds.</p>
+        </div>
+        </body>
+
+    {% else %}
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+        <body class="w3-container w3-auto">
+        <div class="w3-panel w3-pale-green w3-border">
+            <p>Correct!</p>
+            <p>You can use <b>{% if player.endowment == 100 %}400{% else %}100{%  endif %} points</b> over all rounds.</p>
+        </div>
+        </body>
+    {%  endif %}
+
+    3. Imagine you invested some of your points in the lottery and lost. How many points do you receive in this round?
+    {%  if player.control_3 == 0 %}
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+        <body class="w3-container">
+        <div class="w3-panel w3-pale-red w3-border">
+            <p>Your answer was wrong.</p>
+            <p>The correct answer is: {% if player.endowment == 100 %}100{% else %}25{%  endif %} points minus the points invested.<br>
+               You will receive the points not used anyway. However, you can not invest the unused points from one round in the next lottery rounds.</p>
+        </div>
+        </body>
+
+    {% else %}
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+        <body class="w3-container w3-auto">
+        <div class="w3-panel w3-pale-green w3-border">
+            <p>Correct!</p>
+            <p>You will receive {% if player.endowment == 100 %}100{% else %}25{%  endif %} points minus the points invested.
+                However, you can not invest the unused points from one round in the next lottery rounds.</p>
+        </div>
+        </body>
+    {%  endif %}
+
+     4. Imagine you invested some of your points in the lottery and won. How many points do you receive in this round?
+    {%  if player.control_4 == 0 %}
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+        <body class="w3-container">
+        <div class="w3-panel w3-pale-red w3-border">
+            <p>Your answer was wrong.</p>
+            <p>The correct answer is: <b>7 times the amount invested plus the unused points</b></p>
+        </div>
+        </body>
+
+    {% else %}
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+        <body class="w3-container w3-auto">
+        <div class="w3-panel w3-pale-green w3-border">
+            <p>Correct!</p>
+            <p>You earn 7 times the amount invested plus the unused points.</p>
+        </div>
+        </body>
+    {%  endif %}
+
+    <button class="btn btn-primary btn-large">
+    Start the investment task now!
+    </button>
+
+
+{% endblock %}

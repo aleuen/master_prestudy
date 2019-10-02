@@ -1,0 +1,17 @@
+{% extends "global/Page.html" %}
+{% load otree %}
+
+{% block title %}
+Exit Questionnaire
+{% endblock %}
+
+{% block content %}
+<div class="card bg-light instructions">
+    Please answer the following questions:
+    </div>
+
+    {% formfields %}
+
+    {% next_button %}
+
+{% endblock %}

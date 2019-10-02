@@ -1,0 +1,23 @@
+{% extends "global/Page.html" %}
+{% load otree static %}
+
+{% block title %}
+{% endblock %}
+
+{% block content %}
+    Before the result of the last round and your overall results are shown, we are interested in the reasoning of your
+    last investment decision.<br><br>
+
+    <h2>Why did you invest {{ player.investment_4}}  in the last lottery round?</h2>
+
+    Please take a moment and think of all reasons that cross your mind while coming up with your answer to this question.
+    Then, please enter these reasons one at a time in the fields below. Try to describe each reason with a full
+    sentence such that another person can easily understand it.
+
+
+    {% formfields %}<br><br>
+
+    {% next_button %}
+
+
+{% endblock %}

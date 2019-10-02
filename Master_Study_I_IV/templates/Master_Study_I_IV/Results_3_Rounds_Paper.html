@@ -1,0 +1,15 @@
+{% extends "global/Page.html" %}
+{% load otree static %}
+
+{% block title %}
+{% endblock %}
+
+{% block content %}
+
+    Your total earnings for the three rounds are <b> {{ player.sum_lot_t3 }}</b>.<br><br>
+
+
+    {% next_button %}
+{% endblock %}
+
+

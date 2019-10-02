@@ -1,0 +1,113 @@
+{% extends "global/Page.html" %}
+{% load otree static %}
+
+{% block title %}
+
+{% endblock %}
+
+{% block content %}
+    <div class="card bg-light instructions">
+        One of the reasons that you've just typed in was:<br><br>
+
+        <center><b>"{{ player.reason_5 }}"</b></center>
+
+    </div>
+
+    <p>
+    How strongly does your description above support that you would invest more vs. less into the lottery?<br>
+    </p>
+
+        <head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+    .label {
+      font-size: 70%;
+      width: 15%;
+      heigth: 25px;
+      color: white;
+      padding: 8px;
+    }
+
+    .other {
+        width: 15%;
+        heigth: 25px;
+        background-color: #e7e7e7;
+        color: black; /* Gray */
+    }
+
+    .slider {
+      -webkit-appearance: none;
+      width: 50%;
+      height: 15px;
+      boarder-radius: 5px;
+      background: #d3d3d3;
+      outline: none;
+      opacity: 0.7;
+      -webkit-transition: .2s;
+      transition: opacity .2s;
+    }
+
+    .slider:hover {
+      opacity: 1;
+    }
+
+    .slider::-webkit-slider-thumb {
+      -webkit-appearance: none;
+      appearance: none;
+      width: 25px;
+      height: 25px;
+      border-radius: 50%;
+      background: #2196F3;
+      cursor: pointer;
+    }
+
+    .slider::-moz-range-thumb {
+      width: 25px;
+      height: 25px;
+      border-radius: 50%;
+      background: #4CAF50;
+      cursor: pointer;
+    }
+
+    table {
+  #font-family: arial, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+td, th {
+  border: 0px solid #dddddd;
+  text-align: left;
+  padding: 8px;
+}
+
+tr:nth-child(even) {
+  background-color: #dddddd;
+}
+</style>
+
+</head>
+
+    <p>
+    <span class="label other">strong support against investment</span>
+    <input type="range" name="supp_r5" min="-50" max="50" step="1" class="slider">
+    <span class="label other">support support for a large investment</span>
+    </p>
+
+    <br><br>
+
+<body>
+<table>
+  <tr>
+    <td>Does your description above include personal experience made in the previous rounds of the lottery task?</td>
+    <td><center>{% formfield player.exp_pr_r5 %}</center></td>
+  </tr>
+</table>
+
+</body>
+</html>
+    {% next_button %}
+
+{% endblock %}
+
+

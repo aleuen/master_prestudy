@@ -1,0 +1,18 @@
+{% extends "global/Page.html" %}
+{% load otree static %}
+
+{% block title %}
+
+{% endblock %}
+
+{% block content %}
+    You rolled a <b>{{ player.random_draw }}</b>.<br><br>
+
+    You invested: <b>{{ player.investment_4 }}</b>.<br><br>
+
+    Investment outcome: {% if player.lot_4_s %} <b>success</b>{% else %} <b>failure</b>{%  endif %}.<br><br>
+
+    {% next_button %}
+{% endblock %}
+
+

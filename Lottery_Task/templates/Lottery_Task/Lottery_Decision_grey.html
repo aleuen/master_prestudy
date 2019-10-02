@@ -1,0 +1,33 @@
+{% extends "global/Page.html" %}
+{% load otree static %}
+
+{% block title %}
+    Round {{ player.round_number }} (out of {{ Constants.num_rounds }})
+{% endblock %}
+
+{% block content %}
+    The "success number" for this round is <b>{{ player.success_number }}</b>.<br><br>
+
+    You have <b>{{ Constants.endowment }} points</b> to invest in the lottery.<br><br>
+
+    <b>I would like to invest:</b>
+
+    {% formfields %}<br><br>
+
+    {% next_button %}
+
+
+{% endblock %}
+
+{% block scripts %}
+
+    <html>
+    <head>
+        <style>
+            body {background-color:rgb(60, 60, 60);}
+             body {color: GhostWhite;}
+        </style>
+    </head>
+    </html>
+
+{% endblock %}
