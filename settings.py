@@ -18,40 +18,11 @@ SESSION_CONFIGS = [
     #    'num_demo_participants': 3,
     #    'app_sequence': ['public_goods', 'payment_info'],
     #},
-    {
-        'name': 'master_prestudy',
-        'num_demo_participants': 20,
-        'app_sequence': ['master_prestudy'],
-    },
-
-    {
-        'name': 'master_study',
-        'num_demo_participants': 5,
-        'app_sequence': ['Consent_Instructions', 'SOEP5'],
-    },
-
-    {
-        'name': 'Consent_Instructions',
-        'num_demo_participants': 5,
-        'app_sequence': ['Consent_Instructions'],
-    },
-
-    {
-        'name': 'SOEP5',
-        'num_demo_participants': 5,
-        'app_sequence': ['SOEP5'],
-    },
 
     {
         'name': 'Master_Study_I_IV',
         'num_demo_participants': 16,
         'app_sequence': ['Master_Study_I_IV', 'SOEP5', 'Exit_Questionnaire'],
-    },
-
-    {
-        'name': 'Exit_Questionnaire',
-        'num_demo_participants': 16,
-        'app_sequence': ['Exit_Questionnaire'],
     }
 ]
 
